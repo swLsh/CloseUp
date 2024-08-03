@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/header.js" defer></script>
+    <script src="/js/board/CSCenter/CSMain.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/a8fad9cdbf.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/board/CSCenter/CSMain.css">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <link rel="stylesheet" href="/css/fixedBtns.css">
+
+
+</head>
+<body>
+<th:block th:insert="~{fragments.html :: header_fragment}"></th:block>
+
+    <main>
+    <!--    <th:block th:if="${isError}">-->
+    <!--        <script>-->
+    <!--            alert('해당 게시물은 비밀번호를 입력해야 합니다!');-->
+    <!--        </script>-->
+    <!--    </th:block>-->
+        <!-- 상단 전체 -->
+        <section class="total-top">
+            <section class="title-sec">
+                <p>고객 센터</p>
+            </section>
+
+
+            <!-- 상단 고객센터 메뉴 -->
+            <section class="top-navBtn">
+                <button><a href="/board/CSCenter/CSMain">FnQ</a></button>
+                <button><a href="/board/CSCenter/CSMain">1:1 문의</a></button>
+                <button><a href="/board/CSCenter/CSMain">공지사항</a></button>
+            </section>
+
+            <!-- 검색창 부분 -->
+            <form method="get" action="/board/CSCenter/CSMain">
+            <section class="top-input">
+                <input type="text" name="keyword" th:value="${keyword}" placeholder="질문 키워드를 입력해주세요.">
+                <div class="keyword-con">
+                    <!--                <div id="keyword_title_con">-->
+                    <!--                    <p>인기 키워드</p>-->
+                    <!--                </div>-->
+                    <div id="keywordBtns">
+                        <button type="button" class="keyword-btn" data-keyword="회원"><span>#회원</span></button>
+                        <button type="button" class="keyword-btn" data-keyword="결제"><span>#결제</span></button>
+                        <button type="button" class="keyword-btn" data-keyword="리뷰"><span>#리뷰</span></button>
+                        <button type="button" class="keyword-btn" data-keyword="전문가"><span>#전문가</span></button>
+                        <button type="button" class="keyword-btn" data-keyword="채팅"><span>#채팅</span></button>
+                        <button type="button" class="keyword-btn" data-keyword="환불"><span>#환불</span></button>
+                    </div>
+                </div>
+            </section>
+            </form>
+        </section>
+
+        <section class="faq-board-section">
+            <div>
+                <button type="button" class="faq-write-btn" sec:authorize="authenticated">글쓰기</button>
+                <button type="button" id="loginBtn" class="faq-write-btn" sec:authorize="!authenticated">글쓰기</button>
+            </div>
+            <table>
+                <colgroup>
+                    <col class="no">
+                    <col class="title">
+                    <col class="writer">
+                    <col class="write-date">
+                    <col class="view-count">
+                    <col class="like-count">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성 날짜</th>
+                    <th>조회 수</th>
+                    <th>추천 수</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="article, stat: ${articles}">
+                    <td th:text="${stat.count}">(번호)</td>
+                    <td>
+                        <a th:href="@{|/board/CSCenter/CSPost/${article.id}|}" th:text="${article.title}">(제목)</a>
+                    </td>
+                    <td th:text="${article.userId}">(작성자)</td>
+                    <td th:text="${#temporals.format(article.writtenAt, 'yy/MM/dd')}">(작성날짜)</td>
+                    <td th:text="${article.view}">(조회수)</td>
+                    <td th:text="${article.likeCount}">(추천수)</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <nav class="pagination-nav">
+                <ul class="pagination">
+                    <li><a href="#"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <li active><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+                </ul>
+            </nav>
+        </section>
+        <th:block th:insert="~{fragments.html :: fixedBtns_frag}"></th:block>
+
+    </main>
+</body>
+</html>

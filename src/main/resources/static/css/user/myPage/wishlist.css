@@ -1,0 +1,96 @@
+@import "../../common.css";
+#wishlistSec{
+    width: 1104px;
+    margin: 80px auto;
+    height: 100vh;
+}
+#wishlistSec > div{
+    width: 1040px;
+    margin: 0 auto;
+    position: relative;
+}
+#titleSec{
+    color: var(--color-dark-gray);
+    font-size: 40px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+/* 즐겨 찾기 목록이 없을 때, */
+.is-null {
+    margin: auto;
+    padding: 100px;
+    width: 100%;
+    height: 400px;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    color: var(--color-medium-gray);
+}
+
+.is-null i{
+    font-size: 62px;
+    margin-bottom: 24px;
+}
+.is-null i, .is-null p{
+}
+
+
+
+.wish-lies{
+    margin-bottom: 30px;
+}
+.wish-lies > div{
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    width: 1040px;
+    height: 250px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+.heart-con{
+    width: 100px;
+}
+.heart-con i{
+    font-size: 55px;
+    color: var(--color-error-red);
+}
+.header-con{
+    width: 190px;
+    height: 190px;
+    margin-right: 40px;
+}
+.header-con img{
+    width: 190px;
+    height: 160px;
+}
+.category-con > button{
+    height: 20px;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+.content-sec{
+    display: flex;
+}
+.title-con{
+    width: 220px;
+    height: 190px;
+    margin-right: 40px;
+}
+.writer-con{
+    margin-bottom: 30px;
+}
+.title{
+    font-size: 28px;
+    font-weight: bold;
+}
+.content-con{
+    height: 190px;
+    align-content: center;
+}
+.content-con p{
+    color: var(--color-medium-gray);
+}

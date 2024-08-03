@@ -1,0 +1,97 @@
+@import "../../common.css";
+
+#userMainSec{
+    max-width: 1104px;
+    height: 100vh;
+    margin: 80px auto;
+}
+
+#userMainSec > div{
+    position: relative;
+}
+#userProfileSection{
+    margin-bottom: 20px;
+}
+#userProfileSection > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#userProfileImgContainer{
+    width: 250px;
+    height: 250px;
+}
+#profileImage{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+#titleSec{
+    color: var(--color-dark-gray);
+    font-size: 40px;
+    font-weight: lighter;
+}
+#titleSec p{
+    display: inline-block;
+}
+#userId{
+    font-weight: normal;
+}
+#userProfileImgContainer{
+    position: relative;
+    width: 250px;
+    margin-left: 20px;
+}
+#changeSpan{
+    position: absolute;
+    display: none;
+    width: 80px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-content: center;
+    border: 2px solid var(--color-lighter-gray);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+}
+#changeProfileImgBtn:hover img{
+    filter:brightness(70%);
+}
+#changeProfileImgBtn:hover{
+    #changeSpan{
+        display: inline-block;
+    }
+}
+/***********************************/
+#userCategorySection > ul{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+}
+.user-category-list{
+    width: 368px;
+    height: 300px;
+    padding-top: 70px;
+    text-align: center;
+}
+.user-category-list > a > i{
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.category-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.category-desc > p{
+    margin-bottom: 5px;
+}
+.border{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.user-category-list:not(.non){
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}

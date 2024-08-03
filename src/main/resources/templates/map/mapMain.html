@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>주변전문가</title>
+    <script src="/js/header.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/98fb4054a6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="/js/map/mapMain.js" defer></script>
+
+
+    <link rel="stylesheet" href="/css/header/header.css">
+    <link rel="stylesheet" href="/css/fixedBtns.css">
+    <link rel="stylesheet" href="/css/map/mapMain.css">
+
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijag8cdd6e"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijag8cdd6e&submodules=geocoder"></script>
+
+</head>
+
+<body>
+<th:block th:insert="~{fragments.html :: header_fragment}"></th:block>
+
+    <main>
+        <section id="mapSec">
+            <section id="currentLoca">
+                <div>
+                    <button type="button" id="currentLocaBtn"><i class="fa-solid fa-location-crosshairs"></i></button>
+                </div>
+                <div>
+                    <b>현재 위치</b>
+                    <p id="currentAddress"></p>
+                </div>
+            </section>
+            <section id="ExpertMap">
+                <div id="map" style="width: 1040px; height: 640px">
+                </div>
+                <div id="mapOnMarker"></div>
+                <section id="expertInfoListSec">
+                    <div class="embla">
+                        <div class="embla__viewport">
+                            <div class="embla__container" id="expertContainer">
+                                <!-- 동적 생성 -->
+                            </div>
+                        </div>
+                        <div class="embla-btn-container">
+                            <button type="button" class="embla__prev"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="embla__next"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <th:block th:insert="~{fragments.html :: fixedBtns_frag}"></th:block>
+
+    </main>
+</body>
+</html>

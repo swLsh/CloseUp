@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 성공</title>
+    <script src="/js/header.js" defer></script>
+
+    <link rel="stylesheet" href="/css/user/registerSuccess.css">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <link rel="stylesheet" href="/css/fixedBtns.css">
+
+</head>
+<body>
+<th:block th:insert="~{fragments.html :: header_fragment}"></th:block>
+
+    <main>
+        <section class="find-sec">
+            <section class="title-sec">
+                <p>회원가입 성공</p>
+            </section>
+            <!-- css를 위한 div-->
+            <div id="navFormCon">
+                <!-- css를 위한 div-->
+                <div id="newPwCon">
+                    <section class="success-msg-sec">
+                        <p>회원가입이 되었습니다.</p>
+                        <p><a href="login.html">로그인</a>을 통해 다양한 전문가와 소통을 시작해 주세요.</p>
+                        <p>:)</p>
+                    </section>
+
+                    <section>
+                        <button type="submit" class="find-Btn">로그인</button>
+                        <button type="submit" class="find-Btn">홈으로</button>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <th:block th:insert="~{fragments.html :: fixedBtns_frag}"></th:block>
+
+    </main>
+</body>
+</html>

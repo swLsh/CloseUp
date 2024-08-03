@@ -1,0 +1,144 @@
+@import "../common.css";
+#mapSec{
+    position: relative;
+    width: 1104px;
+    height: 824px;
+    margin: 40px auto;
+    padding: 32px;
+}
+/************* 현재 위치 **************/
+#currentLoca{
+    display: flex;
+    background-color: white;
+    height: 56px;
+}
+#currentLoca div{
+    padding-left: 10px;
+    align-content: center;
+}
+#currentLoca i{
+    font-size: 30px;
+    color: var(--color-error-red);
+}
+/************* 지도 **************/
+#expertMap #map img{
+    width: 1040px;
+    height: 640px
+}
+/************* 내 근처 전문가 **************/
+.embla{
+    position: relative;
+    overflow: hidden;
+    top: -80px;
+}
+.embla__container{
+    display: flex;
+}
+.embla__slide{
+    width: 200px;
+    height: 280px;
+}
+.embla__slide{
+    margin-left: 20px;
+}
+.embla__slide:last-child{
+    margin-right: 20px;
+}
+.img-container img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+.title-container{
+    width: 100%;
+    margin: 4px 0;
+    height: 40px;
+}
+.title-container > a{
+    display: inline-block;
+    align-content: center;
+}
+.profile-title{
+    margin-bottom: 2px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
+.profile-desc{
+    width: 100%;
+    height: 18px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.rate-container{
+    height: 18px;
+    text-align: end;
+    font-size: 14px;
+    font-weight: bold;
+}
+.rate-container i{
+    color: orange;
+}
+.embla-btn-container{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 120px;
+    justify-content: space-between;
+}
+.embla-btn-container > button{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.embla-btn-container > button:hover{
+    background-color: var(--color-main-navy);
+    color: var(--color-lighter-bluegray);
+}
+/*****************인포 컨테이너******************/
+.info-template{
+    display: flex;
+    width: 276px;
+    height: 100px;
+    padding: 16px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.name-con{
+    display: flex;
+    width: 144px;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-right: 16px;
+}
+.expert-name{
+    font-size: 14px;
+    font-weight: bold;
+}
+.expert-desc{
+    height: 30px;
+    font-size: 12px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.expert-addr{
+    height: 14px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info-template button{
+    flex: 1;
+    background-color: var(--color-main-navy);
+    color: var(--color-lighter-bluegray);
+    border-radius: 8px;
+}
+.info-template button:hover{
+    background-color: var(--color-lighter-bluegray);
+    color: var(--color-main-navy);
+}

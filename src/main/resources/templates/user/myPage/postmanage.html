@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>마이페이지 | 게시물 관리 페이지</title>
+    <script src="/js/header.js" defer></script>
+    <script src="https://kit.fontawesome.com/a8fad9cdbf.js" crossorigin="anonymous"></script>
+    <script defer src="/js/user/myPage/postmanage.js"></script>
+
+    <link rel="stylesheet" href="/css/user/myPage/postmanage.css">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <link rel="stylesheet" href="/css/fixedBtns.css">
+
+</head>
+<body>
+<th:block th:insert="~{fragments.html :: header_fragment}"></th:block>
+
+    <main>
+        <section id="manageSection">
+            <div>
+                <section id="titleSec">
+                    <p>게시물 관리 페이지</p>
+                </section>
+                <div id="manageContainer">
+                    <div id="headerContainer">
+                        <div class="select-con">
+                            <div>
+                                <label>
+                                    <select>
+                                        <option>최신순</option>
+                                        <option>오래된순</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <button class="write-btn"><a href="/board/community/communityWrite">글 작성</a></button>
+                                <button class="delete-btn">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="manageTable">
+                        <colgroup>
+                            <col class="check-box">
+                            <col class="title">
+                            <col class="date">
+                            <col class="category">
+                            <col class="writer">
+                        </colgroup>
+                        <thead id="manageThead">
+                        <tr id="theadRow">
+                            <th><input type="checkbox" onclick="selectAll(this)"></th>
+                            <th>게시글 제목</th>
+                            <th>게시한 날짜</th>
+                            <th>카테고리</th>
+                            <th>작성자</th>
+                        </tr>
+                        </thead>
+<!--                            <tbody id="manageTbody">-->
+<!--                            <tr class="manage-row" th:each="article : ${articles}">-->
+<!--                                <td><input type="checkbox"></td>-->
+<!--                                <td><a th:href="@{|/board/community/communityPost/${article.id}|}" th:text="${article.title}"></a></td>-->
+<!--                                <td th:text="${#temporals.format(article.writtenAt, 'yyyy-MM-dd')}">Jun 21, 2024</td>-->
+<!--                                <td th:text="${article.boardName}">자유 게시판</td>-->
+<!--                                <td th:text="${article.userId}">abc123</td>-->
+<!--                            </tr>-->
+                        <tbody id="manageTbody">
+                        <tr class="manage-row" th:data-id="${article.id}" th:each="article: ${articles}">
+                            <td><input type="checkbox"></td>
+                            <td th:text="${article.title}">글 제목 1</td>
+                            <td th:text="${#temporals.format(article.writtenAt, 'yy/MM/dd')}">Jun 21, 2024</td>
+                            <td th:text="${article.boardName}">자유 게시판</td>
+                            <td th:text="${article.userId}">abc123</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <th:block th:insert="~{fragments.html :: fixedBtns_frag}"></th:block>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CloseUp</title>
+    <script src="/js/header.js" defer></script>
+
+    <th:block th:insert="~{fragments.html :: cdns}"></th:block>
+    <script src="https://kit.fontawesome.com/98fb4054a6.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <link rel="stylesheet" href="/css/fixedBtns.css">
+    <script defer src="/js/common.js"></script>
+
+</head>
+<body>
+
+
+<th:block th:insert="~{fragments.html :: chat_dialog}"></th:block>
+<th:block th:insert="~{fragments.html :: header_fragment}"></th:block>
+
+<main>
+    <div class="content-container">
+<!--        <button id="testBtn">본인인증 테스트</button>-->
+        <h1>모든 IT 전문가를 찾는 방법</h1>
+        <p>내 주변 000명의 IT 전문가와 만나보세요.</p>
+        <div class="search-container">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                     viewBox="0 0 50 50">
+                    <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"></path>
+                </svg>
+            </button>
+            <input type="text" placeholder="어떤 IT 전문가를 찾으세요?   ex) 웹개발, 백엔드, ...">
+        </div>
+        <div class="category-container">
+            <button style="background-color:#E9D2FF; color: #6941C6;">Front-End</button>
+            <button style="background-color:#FDF4C7; color: #FF9900;">Design</button>
+            <button style="background-color:#E3F1FF; color: #167EE6;">Java</button>
+            <button style="background-color:#98ffb0; color: #0C9059;">Python</button>
+            <button style="background-color:#FDE7E0; color: #A0855B;">WEB</button>
+            <button style="background-color:#E9D2FF; color: #6941C6;">Back-End</button>
+            <button style="background-color:#C5CDFE; color: darkblue;">APP</button>
+            <button style="background-color:#E7F0DC; color: #729762;">SpringBoot</button>
+            <button style="background-color:#a1e7ff; color: #174fa3;">React</button>
+            <button style="background-color:#ffd3eb; color: #930346;">MySQL</button>
+            <button style="background-color:#ffcca9; color: #8a5930;">Node.js</button>
+        </div>
+        <div class="sort-container">
+            <ul>
+                <li>인기 순</li>
+                <li>최근 순</li>
+                <li>날짜 순</li>
+            </ul>
+        </div>
+        <div class="profile-container">
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+            <div class="profile">프로필</div>
+        </div>
+    </div>
+    <th:block th:insert="~{fragments.html :: fixedBtns_frag}"></th:block>
+
+</main>
+
+<footer>
+    <a class="logo" href="/">
+        <img src="/imgs/CloseUp-removebg-preview.png"/>
+    </a>
+    <p>&copy; 2024 CloseUp All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

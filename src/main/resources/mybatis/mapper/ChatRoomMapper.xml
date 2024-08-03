@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.closeup.domain.mapper.ChatRoomMapper">
+
+    <select id="selectChatRoomDtoListByUserId">
+        SELECT *
+        FROM `chat_room`
+        WHERE `user_id` = #{userId}
+    </select>
+
+    <select id="selectChatRoomDtoById">
+        SELECT *
+        FROM `chat_room`
+        WHERE `id` = #{id}
+    </select>
+
+    <select id="selectChatRoomDtoByUserIdAndExpertNickname">
+        SELECT *
+        FROM `chat_room`
+        WHERE `user_id` = #{userId} AND `expert_nickname` = #{expertNickname}
+    </select>
+
+    <select id="selectChatRoomDtoListByExpertNickname">
+        SELECT *
+        FROM `chat_room`
+        WHERE `expert_nickname` = #{expertNickname}
+    </select>
+
+    <insert id="insertChatRoom"
+            parameterType="com.example.closeup.domain.dto.ChatRoomDto"
+            useGeneratedKeys="true"
+            keyColumn="id"
+            keyProperty="id">
+        INSERT INTO `chat_room` (`user_id`, `expert_nickname`)
+        VALUES (#{userId}, #{expertNickname})
+    </insert>
+
+    <update id="updateChatRoom">
+        UPDATE `chat_room`
+        SET `not_read_user_message_count` = #{notReadUserMessageCount}, `not_read_expert_message_count` = #{notReadExpertMessageCount}
+        WHERE `id` = #{id}
+    </update>
+</mapper>
