@@ -85,3 +85,9 @@ CloseUp
 <br/>
 
 ## ▶️ 주요 기능
+![기능소개-1](https://github.com/user-attachments/assets/bee8037e-35dd-40e7-90c9-4e709d881fb1)
+![기능소개-2](https://github.com/user-attachments/assets/f5120c6b-cc27-49cf-b5e9-749632bbf52b)
+![기능소개-3](https://github.com/user-attachments/assets/bdee7398-3f58-46c1-a4d6-1fbed608cd65)
+![기능소개-4](https://github.com/user-attachments/assets/517fc5c2-af8d-4c86-930b-6e0bf31d4f4f)
+![기능소개-5](https://github.com/user-attachments/assets/327aa55e-65cb-4bd5-b773-11982a51ea17)
+
